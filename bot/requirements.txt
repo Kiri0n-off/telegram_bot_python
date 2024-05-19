@@ -1,0 +1,6 @@
+requests==2.29.0
+python-dotenv
+pathlib
+python-telegram-bot==13.7
+paramiko
+psycopg2
