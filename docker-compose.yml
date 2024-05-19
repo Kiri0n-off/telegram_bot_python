@@ -7,15 +7,15 @@ services:
       - 1560:1560
     environment:
       TOKEN: ${TOKEN}
-      USERSQL: ${DB_USER}
-      PASSWORDSQL: ${DB_PASSWORD}
-      HOSTSQL: ${DB_HOST}
-      PORTSQL: ${DB_PORT}
-      DATABASESQL: ${DB_DATABASE}
-      HOSTSSH: ${RM_HOST}
-      PORTSSH: ${RM_PORT}
-      USERNAMESSH: ${RM_USER}
-      PASSWORDSSH: ${RM_PASSWORD}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_DATABASE: ${DB_DATABASE}
+      RM_HOST: ${RM_HOST}
+      RM_PORT: ${RM_PORT}
+      RM_USER: ${RM_USER}
+      RM_PASSWORD: ${RM_PASSWORD}
       DB_REPL_LOGS: ${DB_REPL_LOGS}
     volumes:
       - replication_log:/logs_ps
