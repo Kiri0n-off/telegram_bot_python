@@ -12,7 +12,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Conve
 from pathlib import Path
 from dotenv import load_dotenv
 
-# SQL
 TOKEN = os.getenv('TOKEN')
 connectionSql = None
 userSql=os.getenv('DB_USER')
@@ -26,12 +25,18 @@ logDirectory=os.getenv('DB_REPL_LOGS')
 host=os.getenv('RM_HOST')
 port=os.getenv('RM_PORT')
 username=os.getenv('RM_USER')
-password=os.getenv('DB_REPL_LOGS')
+password=os.getenv('RM_PASSWORD')
+print(host)
+print(port)
+print(username)
+print(password)
 
 logging.basicConfig(
     filename='logfile.txt', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
 )
 logger = logging.getLogger(__name__)
+# SQL
+
 
 def start(update: Update, context):
     user = update.effective_user
