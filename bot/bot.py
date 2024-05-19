@@ -12,6 +12,8 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Conve
 from pathlib import Path
 from dotenv import load_dotenv
 
+load_dotenv()
+
 TOKEN = os.getenv('TOKEN')
 connectionSql = None
 userSql=os.getenv('USERSQL')
