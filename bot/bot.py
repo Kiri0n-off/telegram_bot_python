@@ -91,7 +91,7 @@ def saveToDB(update: Update, context):
             cursor = connection.cursor()
             f = open('temp.txt', 'r')
             for line in f:
-                cursor.execute(f"INSERT INTO phones (phone) VALUES ('{line.replace('\n','')}');")
+                cursor.execute(f"INSERT INTO phones (phone) VALUES ('{line.replace(chr(10),'')}');")
                 connection.commit()
             logging.info("Команда успешно выполнена")
             update.message.reply_text('Данные сохранены в БД. Можете проверить набрав команду /get_phone_numbers', reply_markup=ReplyKeyboardRemove(), )
@@ -138,7 +138,7 @@ def saveToDBE(update: Update, context):
             cursor = connection.cursor()
             f = open('temp.txt', 'r')
             for line in f:
-                cursor.execute(f"INSERT INTO emails (email) VALUES ('{line.replace('\n','')}');")
+                cursor.execute(f"INSERT INTO emails (email) VALUES ('{line.replace(chr(10),'')}');")
                 connection.commit()
             logging.info("Команда успешно выполнена")
             update.message.reply_text('Данные сохранены в БД. Можете проверить набрав команду /get_emails', reply_markup=ReplyKeyboardRemove(), )
